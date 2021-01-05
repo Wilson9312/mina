@@ -1,0 +1,130 @@
+<!--pages/wxmlBase/wxmlBase.wxml-->
+<text>pages/wxmlBase/wxmlBase.wxml</text>
+
+<!--
+    标签
+    1. text 相当于 web 的 span标签 行内元素 不会换行
+    2. view 相当于 web 的 div标签  块级元素 会换行
+    3. checkbox => 复选框标签
+-->
+
+<text>1</text>
+<text>2</text>
+
+<view>1</view>
+<view>2</view>
+  
+
+<!--
+    数据使用
+-->
+
+<!-- 1.字符串 -->
+<view> {{msg}} </view>
+<!-- 2.数字类型 -->
+<view> {{num}} </view>
+<!-- 3.bool类型 -->
+<view> 是否美女：{{isBeauty}} </view>
+<!-- 4.object类型 -->
+<view> 年龄：{{person.age}} </view>
+<view> 身高：{{person.height}} </view>
+<view> 体重：{{person.weight}} </view>
+
+<text>\n</text>
+
+<!-- 5.在标签的属性中使用 -->
+<view data-custom="{{num}}">自定义标签属性</view>
+<view id="item-{{numList[0]}}">标签属性进阶</view>
+
+<!-- 6.使用bool
+        作为标签的checked属性，旧版编译器有空格的bug，即如下会被识别成别的，新版不会了
+        特别注意：不要直接写 checked="false"，其计算结果是一个字符串，转成 boolean 类型后代表真值。
+-->
+<view>
+    <checkbox class="" value="" disabled="false" checked="   {{!isBeauty}}" color="">
+    复选框示例 
+    </checkbox>
+</view>
+
+<text>\n</text>
+
+<!-- 7.运算 -->
+<view>文字输出：   1+1    '1'+'1'   </view>
+<view>计算：{{1+1}}</view>
+<view>字符串拼接：{{'1'+'1'}}</view>
+<view>三元运算：{{10 % 2 === 0 ? '偶数' : '基数'}}</view>
+<view hidden="{{hideViewFlag ? true : false}}"> hideViewFlag 为 true 时不隐藏 </view>
+
+<text>\n</text>
+
+<!-- 8.组合 -->
+<template is="objectCombine" data="{{title:msg, num, ...person, e: 5}}"></template>
+
+
+
+<!-- 8.列表循环 
+        8.1 默认参数
+            默认数组的当前项的下标变量名默认为 index，数组当前项的变量名默认为 item
+            wx:for-index="index"
+            wx:for-item="item"
+        8.2 嵌套循环
+            最好自定义参数，以便于区分
+            使用 wx:for-item 可以指定数组当前元素的变量名，
+            使用 wx:for-index 可以指定数组当前下标的变量名
+        8.3 wx:key="xxx"
+            wx:key 是强制声明的
+            xxx 要选择列表中的值唯一的属性
+            当遍历普通数组时，应该为*this
+-->
+
+<view>
+    <view>列表循环 嵌套循环</view>
+    <view wx:for="{{occupationList}}" wx:key="id">
+        索引：{{index}} 值：{{item.people}}
+        <view wx:for="{{characterList}}" wx:key="id" wx:for-index="crtIndex" wx:for-item="crtItem">
+            自定义索引：{{crtIndex}} 自定义值：{{crtItem.name}}
+        </view>
+    </view>
+
+    <view>普通数组循环</view>
+    <view wx:for="{{['1','2','3',4,5,6,msg]}}" wx:key="*this">
+        index:{{index}} - item:{{item}}
+    </view>
+</view>
+  
+<text>\n</text>
+
+<!-- 9.对象循环 遍历属性 
+        index-item 映射为 key-value，建议自定义属性名如下
+-->
+<view wx:for="{{person}}" wx:key="id" wx:for-index="key" wx:for-item="value">
+    key:{{key}} - value:{{value}}
+</view>
+
+<!-- 10.block 占位符标签 -->
+
+
+<text>\n</text>
+
+<!-- 11.条件渲染
+        11.1 条件语句 修改页面结构
+        11.2 hidden  样式更改 不要和display一起使用，冲突导致隐藏失效
+-->
+<view>
+    <view>条件渲染-条件语句</view>
+    <view wx:if="{{condition > 5}}"> 1 </view>
+    <view wx:elif="{{condition > 2}}"> 2 </view>
+    <view wx:else> 3 </view>
+    <view>条件渲染-hidden</view>
+    <view hidden="{{hiddenCondition}}"> 不应该显示的 </view>
+    <view hidden="{{hiddenCondition}}" style="display:flex;"> 不应该显示的 </view>
+</view>
+  
+
+
+
+<!--  -->
+
+<!--  -->
+
+<!--  -->

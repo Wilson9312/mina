@@ -1,0 +1,31 @@
+<!--pages/wxmlBase/bindAndAction.wxml-->
+<text>pages/wxmlBase/bindAndAction.wxml</text>
+
+<!-- <input class="" value="" type="text" password="false" placeholder="输入框占位符" placeholder-style="" placeholder-class="input-placeholder"
+    disabled="false" maxlength="140" focus="true" bindinput="" bindfocus="" bindblur="" bindconfirm="">
+    沙发上
+</input> -->
+
+<!-- 绑定
+  1. 绑定输入事件：bindinput
+  2. 获取输入的值：从事件源对象获取 e.detail.value
+  3. 赋值：
+    this.setData({
+      num:e.detail.value
+    })
+ -->
+  
+<input type="text" bindinput="handeleInput" />
+
+<view>
+    {{num}}
+</view>
+
+<button bindtap="handleTap" data-operation="{{1}}">
+    +
+</button>
+<button bindtap="handleTap" data-operation="{{-1}}">
+    -
+</button>
+  
+  
