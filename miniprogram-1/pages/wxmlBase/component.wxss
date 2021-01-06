@@ -6,9 +6,13 @@ image.custom{
   width: 600rpx;
   height: 200rpx;
 }
+image.swiperImg{
+  width: 100%;
+  height: calc(750rpx/1016*548);
+}
 swiper{
   box-sizing: border-box;
   border: 1rpx solid red;
   width: 100%;
-  height: 100px;
+  height: calc(750rpx/1016*548);
 }
