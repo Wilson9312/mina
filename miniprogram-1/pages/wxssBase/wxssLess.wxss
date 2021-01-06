@@ -1,0 +1,12 @@
+/* pages/wxssBase/wxssLess.wxss */
+text {
+  color: gray;
+}
+view .vie1 text {
+  color: red;
+}
+view {
+  width: 200rpx;
+  height: calc(200rpx*0.5);
+  background-color: green;
+}

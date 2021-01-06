@@ -1,0 +1,14 @@
+/* pages/wxmlBase/component.wxss */
+
+image.custom{
+  box-sizing: border-box;
+  border: 1rpx solid red;
+  width: 600rpx;
+  height: 200rpx;
+}
+swiper{
+  box-sizing: border-box;
+  border: 1rpx solid red;
+  width: 100%;
+  height: 100px;
+}

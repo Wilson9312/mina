@@ -1,0 +1,3 @@
+<!--pages/wxssBase/wxssBase.wxml-->
+<view> rpx </view>
+<text>使用全局样式的text</text>

@@ -1,5 +1,8 @@
 {
   "pages":[
+    "pages/wxmlBase/component",
+    "pages/wxssBase/wxssLess",
+    "pages/wxssBase/wxssBase",
     "pages/wxmlBase/bindAndAction",
     "pages/wxmlBase/wxmlBase",
     "pages/index/index",

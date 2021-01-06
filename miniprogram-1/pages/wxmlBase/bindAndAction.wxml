@@ -13,6 +13,10 @@
     this.setData({
       num:e.detail.value
     })
+  4. 添加点击事件
+    4.1 bindtap
+    4.2 不能直接传参，要通过自定义属性的方式
+    4.3 事件源中获取自定义属性
  -->
   
 <input type="text" bindinput="handeleInput" />

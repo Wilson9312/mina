@@ -1,0 +1,28 @@
+/* pages/wxssBase/wxssLess.wxss */
+
+// 使用less语法和less插件来写wxss
+
+// 1.定义less变量
+@titleColor:gray;
+
+// 2.使用less变量
+text{
+    color: @titleColor;
+}
+
+// 3.使用嵌套代码
+view{
+    .vie1{
+        text{
+            color: red;
+        }
+    }
+}
+
+// 4.导入
+@import "../styles/commonProperty.less";
+view{
+    width: 200rpx;
+    height: calc(200rpx*0.5);
+    background-color: @themeColor;
+}

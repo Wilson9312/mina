@@ -107,8 +107,10 @@
 <text>\n</text>
 
 <!-- 11.条件渲染
-        11.1 条件语句 修改页面结构
+        11.1 wx:if 条件语句 修改页面结构
         11.2 hidden  样式更改 不要和display一起使用，冲突导致隐藏失效
+        11.3 block wx:if
+            因为 wx:if 是一个控制属性，需要将它添加到一个标签上。如果要一次性判断多个组件标签，可以使用一个 <block/> 标签将多个组件包装起来，并在上边使用 wx:if 控制属性。
 -->
 <view>
     <view>条件渲染-条件语句</view>
@@ -119,7 +121,11 @@
     <view hidden="{{hiddenCondition}}"> 不应该显示的 </view>
     <view hidden="{{hiddenCondition}}" style="display:flex;"> 不应该显示的 </view>
 </view>
-  
+
+<block wx:if="{{true}}">
+    <view>block if 内的视图 1</view>
+    <view>block if 内的视图 2</view>
+</block>
 
 
 

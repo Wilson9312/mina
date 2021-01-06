@@ -1,0 +1,22 @@
+/* pages/wxssBase/wxssBase.wxss */
+/* 
+  rpx（responsive pixel）: 
+    规定所有屏幕宽为750rpx。
+    可以根据屏幕宽度进行自适应。
+  
+  calc 属性做适配计算
+    错误：height: 200rpx*2;
+    正确：height: calc(200rpx*2);
+
+*/
+
+view{
+  width: 200rpx;
+  height: calc(200rpx*2);
+  font-size: 40rpx;
+  background-color: aqua;
+}
+
+/* 样式导入：相对路径 */
+@import "../styles/common.wxss"
+

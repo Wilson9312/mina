@@ -1,0 +1,51 @@
+<!--pages/wxmlBase/component.wxml-->
+
+<!-- 1.view -->
+<!-- <view>
+    暂时省略
+</view> -->
+  
+<!-- 2.text -->
+<!-- 
+  user-select 是否可选，原selectable废弃，实测还是selectable好用
+  decode 是否解码，解码可识别特殊字符表示的符号
+ -->
+
+ <text>
+  无法解码特殊字符：&lt;呵&nbsp;呵
+</text>
+<text selectable decode>
+  可选的字符串
+  可以解码特殊字符：&lt;呵&nbsp;呵
+</text>
+
+<!-- 3.image 图片 -->
+<!-- 
+  图片默认大小：320*240
+  mode 图片展示模式
+    默认scaleToFill拉伸铺满
+    aspectFit 保持宽高比，长边完全显示，常用
+    aspectFill 保持宽高比，短边完全显示，顺便做裁剪，少用
+    widthFix 宽度按设置的来，高度按宽高比自适应
+  lazy-load 懒加载，加了即自动支持
+ -->
+
+<image class="custom" src="https://s3.ax1x.com/2021/01/06/sETwkt.jpg" mode="aspectFit" lazy-load/>
+
+<!-- 4.swiper 轮播图 -->
+
+<!-- bindchange="" bindanimationfinish="" -->
+
+
+<swiper indicator-dots="true" autoplay="true" interval="5000" duration="1000" circular="true">
+    <swiper-item>
+        <image src="https://s3.ax1x.com/2021/01/06/sETwkt.jpg" mode="aspectFit" lazy-load/>
+    </swiper-item>
+    <swiper-item>
+        <image src="https://s3.ax1x.com/2021/01/06/sETwkt.jpg" mode="aspectFit" lazy-load/>
+    </swiper-item>
+    <swiper-item>
+        <image src="https://s3.ax1x.com/2021/01/06/sETwkt.jpg" mode="aspectFit" lazy-load/>
+    </swiper-item> 
+</swiper>
+    

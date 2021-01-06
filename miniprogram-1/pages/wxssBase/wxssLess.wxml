@@ -1,0 +1,8 @@
+<!--pages/wxssBase/wxssLess.wxml-->
+
+<text>定义的灰色变量</text>
+
+<view>
+    导入其他文件的变量
+</view>
+  
