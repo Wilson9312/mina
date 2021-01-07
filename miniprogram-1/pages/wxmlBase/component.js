@@ -1,11 +1,67 @@
 // pages/wxmlBase/component.js
 Page({
 
+  // 按钮点击获取 getPhoneNumber
+  getPhoneNumber(e){
+    console.log(e);
+  },
+
+  // 按钮点击获取 getUserInfo
+  getUserInfo(e){
+    console.log(e);
+  },
+
+  // 单选框响应事件
+  radioChange(e){
+    console.log(e);
+    this.setData({
+      selectedRadio:e.detail.value
+    })
+  },
+
+  // 复选框响应事件
+  checkboxChange(e){
+    console.log(e);
+    this.setData({
+      checkBoxSelectedList:e.detail.value
+    })
+  },
+
   /**
    * 页面的初始数据
    */
   data: {
-
+    htmlString:'<a class="sc-EHOje jXFKFG" href="https://www.tmall.com/wow/z/heybox/heyboxrax/heybox?utparam=%7B%22ranger_buckets_native%22%3A%22tsp2584_31920%22%7D&amp;spm=a2141.1.iconsv5.1&amp;scm=1007.home_icon.tmallxp.d&amp;wh_biz=tm&amp;disableNav=YES"><img class="sc-bZQynM iEnsRn" src="https://gw.alicdn.com/tfs/TB1OIxTcLc3T1VjSZLeXXbZsVXa-183-144.png?getAvatar=1"><p class="sc-gzVnrw hKaypx">天猫新品</p></a>',
+    nodes: [{
+      name: 'div',
+      attrs: {
+        class: 'div_class',
+        style: 'line-height: 60px; color: #1AAD19;'
+      },
+      children: [{
+        type: 'text',
+        text: 'You never know what you\'re gonna get.'
+      }]
+    }],
+    selectedRadio:"male",
+    checkBoxSelectedList:[],
+    checkBoxSource:[
+      {
+        index:0,
+        name:"手机",
+        value:"phone"
+      },
+      {
+        index:1,
+        name:"平板",
+        value:"pad"
+      },
+      {
+        index:0,
+        name:"电脑",
+        value:"computer"
+      },
+    ],
   },
 
   /**

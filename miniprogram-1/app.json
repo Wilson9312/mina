@@ -1,5 +1,6 @@
 {
   "pages":[
+    "pages/custom/custom",
     "pages/wxmlBase/component",
     "pages/wxssBase/wxssLess",
     "pages/wxssBase/wxssBase",

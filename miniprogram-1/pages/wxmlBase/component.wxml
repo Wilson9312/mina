@@ -11,6 +11,7 @@
   decode 是否解码，解码可识别特殊字符表示的符号
  -->
 
+<text>\n\n</text>
  <text>
   无法解码特殊字符：&lt;呵&nbsp;呵
 </text>
@@ -29,15 +30,18 @@
     widthFix 宽度按设置的来，高度按宽高比自适应
   lazy-load 懒加载，加了即自动支持
  -->
-
+<text>\n\n</text>
 <image class="custom" src="https://s3.ax1x.com/2021/01/06/sETwkt.jpg" mode="aspectFit" lazy-load/>
 
 <!-- 4.swiper 轮播图 -->
 
-<!-- bindchange="" bindanimationfinish="" -->
+<!-- 
+    circular 衔接轮播，让轮播看起来更自然
 
+ -->
 
-<swiper indicator-dots="true" autoplay="true" interval="5000" duration="1000" circular="true">
+<text>\n\n</text>
+<swiper indicator-dots="true" indicator-color="#0094ff" indicator-active-color="#ffffff" autoplay="true" interval="5000" duration="1000" circular="true">
     <swiper-item>
         <image class="swiperImg" src="https://s3.ax1x.com/2021/01/06/sETwkt.jpg" mode="aspectFit" lazy-load/>
     </swiper-item>
@@ -49,3 +53,111 @@
     </swiper-item> 
 </swiper>
     
+
+<!-- 5.navigator 导航组件 -->
+<!-- 
+    open-type 跳转方式，用错了可能会导致无法跳转
+        navigate	 保留当前页面，跳转到应用内的某个页面。但是不能跳到 tabbar 页面。
+        redirect	 关闭当前页面，跳转到应用内的某个页面。但是不允许跳转到 tabbar 页面。	
+        switchTab	 跳转到 tabBar 页面，并关闭其他所有非 tabBar 页面	
+        reLaunch	 关闭所有页面，打开到应用内的某个页面
+        navigateBack 关闭当前页面，返回上一页面或多级页面。可通过 getCurrentPages 获取当前的页面栈，决定需要返回几层。
+        exit	     退出小程序，target="miniProgram"时生效
+ -->
+
+<text>\n\n</text>
+<navigator target="self" url="../wxmlBase/bindAndAction" hover-class="navigator-hover" open-type="navigate">
+    页面链接，跳转到数据绑定和点击响应界面
+</navigator>
+  
+<!-- 6.rich-text 富文本 -->
+<!-- 
+    nodes	富文本内容，节点列表 或者 HTML String
+
+ -->
+
+<text>\n\n</text>
+
+<view> 节点渲染，传入数组 </view>
+<rich-text nodes="{{nodes}}">
+    
+</rich-text>
+
+<view> HTML渲染，传入HTML字符串 </view>
+<rich-text nodes="{{htmlString}}">
+    
+</rich-text>
+
+
+<!-- 7.button 按钮 -->
+<!-- 
+
+ -->
+
+<text>\n\n</text>
+<button>默认按钮</button>
+<button size='mini'>mini按钮</button>
+<button type='primary'>绿色</button>
+<button type='default'>白色</button>
+<button type='warn' size='mini'>mini红色</button>
+<button type='primary' loading>加载中</button>
+
+<!-- 转发给个人 -->
+<button open-type='share'>转发share</button>
+<!-- 企业账号才有权限，返回的是加密数据，需要传给后台解密 -->
+<button open-type='getPhoneNumber' bindgetphonenumber="getPhoneNumber">用户手机号getPhoneNumber</button>
+<!-- 事件直接返回明文数据 -->
+<button open-type='getUserInfo' bindgetuserinfo="getUserInfo">用户信息getUserInfo</button>
+<!-- 打开app的条件严苛：需要先从app或app分享的链接打开小程序，才能通过这个按钮回到app -->
+<button open-type='launchApp'>打开app launchApp</button>
+
+<!-- 客服，真机调试 -->
+<button open-type='contact'>客服contact</button>
+<!-- 跳转到授权设置页面，只会显示授权过的选项，真机调试 -->
+<button open-type='openSetting'>授权设置openSetting</button>
+<!-- 反馈投诉，真机调试 -->
+<button open-type='feedback'>意见反馈feedback</button>
+
+
+<!-- 8.icon 字体图标 -->
+<text>\n\n</text>
+<icon type="success" size="23" color=""></icon>
+<icon type="success_no_circle" size="23" color=""></icon>
+<icon type="info" size="23" color=""></icon>
+<icon type="warn" size="23" color=""></icon>
+<icon type="waiting" size="23" color=""></icon>
+<icon type="cancel" size="23" color=""></icon>
+<icon type="download" size="23" color=""></icon>
+<icon type="search" size="23" color=""></icon>
+<icon type="clear" size="23" color=""></icon>
+
+<!-- 9.radio 单选框 -->
+<!-- 
+
+ -->
+ <text>\n\n</text>
+<radio-group bindchange="radioChange">
+    <radio value="male" checked="true">
+        男
+    </radio>
+    <radio value="female">
+        女
+    </radio>
+</radio-group>
+
+<view>
+    选中了{{selectedRadio}}
+</view>
+  
+
+<!-- 10.radio 复选框 -->
+<!-- 
+
+ -->
+ <text>\n\n</text>
+<checkbox-group bindchange="checkboxChange">
+    <checkbox wx:for="{{checkBoxSource}}" wx:key="{{item.id}}" value="{{item.value}}">
+        {{item.name}}
+    </checkbox>
+</checkbox-group>
+<view>选择的内容：{{checkBoxSelectedList}}</view>
