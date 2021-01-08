@@ -1,3 +1,8 @@
 <!--pages/custom/custom.wxml-->
 
-<Tabs></Tabs>
+<Tabs tabs="{{tabs}}" binditemChange="handleItemChange">
+    <block wx:if="{{tabs[0].isActive===true}}">0</block>
+    <block wx:elif="{{tabs[1].isActive===true}}">1</block>
+    <block wx:elif="{{tabs[2].isActive===true}}">2</block>
+    <block wx:else>3</block>
+</Tabs>

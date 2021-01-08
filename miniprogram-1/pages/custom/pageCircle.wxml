@@ -1,0 +1,63 @@
+<!--pages/custom/pageCircle.wxml-->
+<text>pages/custom/pageCircle.wxml</text>
+
+<!-- 消失触发 hide，返回触发 show -->
+<navigator url="../custom/custom" hover-class="navigator-hover" open-type="navigate">
+    正常跳转到 custom 页面
+</navigator>
+
+<!-- 消失触发 unload -->
+<navigator url="../custom/custom" hover-class="navigator-hover" open-type="redirect">
+    重定向到 custom 页面，会触发页面的unload，无法返回
+</navigator>
+
+<view>1</view>
+<view>2</view>
+<view>3</view>
+<view>4</view>
+<view>5</view>
+<view>6</view>
+<view>7</view>
+<view>8</view>
+<view>9</view>
+<view>10</view>
+<view>11</view>
+<view>12</view>
+<view>13</view>
+<view>14</view>
+<view>15</view>
+<view>16</view>
+<view>17</view>
+<view>18</view>
+<view>19</view>
+<view>20</view>
+<view>21</view>
+<view>22</view>
+<view>23</view>
+<view>24</view>
+<view>25</view>
+<view>26</view>
+<view>27</view>
+<view>28</view>
+<view>29</view>
+<view>30</view>
+<view>31</view>
+<view>32</view>
+<view>33</view>
+<view>34</view>
+<view>35</view>
+<view>36</view>
+<view>37</view>
+<view>38</view>
+<view>39</view>
+<view>40</view>
+<view>41</view>
+<view>42</view>
+<view>43</view>
+<view>44</view>
+<view>45</view>
+<view>46</view>
+<view>47</view>
+<view>48</view>
+<view>49</view>
+<view>50</view>

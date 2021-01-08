@@ -156,7 +156,7 @@
  -->
  <text>\n\n</text>
 <checkbox-group bindchange="checkboxChange">
-    <checkbox wx:for="{{checkBoxSource}}" wx:key="{{item.id}}" value="{{item.value}}">
+    <checkbox wx:for="{{checkBoxSource}}" wx:key="id" value="{{item.value}}">
         {{item.name}}
     </checkbox>
 </checkbox-group>

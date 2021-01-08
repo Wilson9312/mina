@@ -1,5 +1,6 @@
 {
   "pages":[
+    "pages/custom/pageCircle",
     "pages/custom/custom",
     "pages/wxmlBase/component",
     "pages/wxssBase/wxssLess",
@@ -15,7 +16,9 @@
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "yuans_c",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle":"black",
+    "enablePullDownRefresh": true,
+    "backgroundColor": "#abcdef"
   },
   "tabBar": {
     "list": [{

@@ -12,7 +12,9 @@
         </view>
     </view>
     <view class="tab_content">
-        内容
+        <!-- slot 占位插槽：用于承载组件使用者提供的wxml结构 -->
+        <!-- 父组件调用子组件时，传递标签过来，替换slot -->
+        <slot ></slot>
     </view>
 </view>
   
