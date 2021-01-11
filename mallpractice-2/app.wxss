@@ -1,2 +1,23 @@
 /**app.wxss**/
-@import "./styles/iconfont.wxss"
+@import "./styles/iconfont.wxss";
+
+/* 配置通用样式初始化 */
+
+/* 微信小程序中，不支持通配符“*”， */
+page,view,text,swiper,swiper-item,image,navigator{
+    padding: 0rpx;
+    margin: 0rpx;
+    box-sizing: border-box;
+}
+
+/* 定义主题颜色变量
+    1.less 支持变量定义
+    2.css 和 wxss 也支持变量定义
+    3.这里是 wxss 文件，演示 wxss 原生变量定义如下
+*/
+page{
+    /* 定义主题色 */
+    --themeColor:#ec5a59;
+    /* 定义字体大小 */
+    font-size: 28rpx;
+}
