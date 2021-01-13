@@ -1,1 +1,18 @@
-/* pages/category/index.wxss */
+page {
+  height: 100%;
+}
+.cates {
+  height: 100%;
+}
+.cates .catesContainer {
+  height: calc(100vh - 90rpx);
+  display: flex;
+}
+.cates .catesContainer .left_menu {
+  flex: 2;
+  background-color: aqua;
+}
+.cates .catesContainer .right_menu {
+  flex: 5;
+  background-color: darkgreen;
+}

@@ -32,7 +32,7 @@
       <!-- 内容 -->
       <view class="floor_list">
         <navigator wx:for="{{item.product_list}}" wx:key="name" wx:for-item="product" wx:for-index="product_idx">
-          <image src="{{product.image_src}}" mode="widthFix"/>
+          <image src="{{product.image_src}}" mode="{{product_idx===0 ? 'widthFix' : 'scaleToFill'}}"/>
             
         </navigator>
           

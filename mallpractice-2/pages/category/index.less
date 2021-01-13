@@ -1,0 +1,21 @@
+page{
+    height: 100%;
+}
+.cates{
+    height: 100%;
+    SearchInput{}
+    .catesContainer{
+        // less中使用 calc 时要注意，不需要转译加 ~'' 包起来即可
+        // 减号两边要加空格，不然会有莫名其妙的错误！！！！！！！！！
+        height: ~'calc(100vh - 90rpx)';
+        display: flex;
+        .left_menu{
+            flex: 2;
+            background-color: aqua;
+        }
+        .right_menu{
+            flex: 5;
+            background-color: darkgreen;
+        }
+    }
+}
