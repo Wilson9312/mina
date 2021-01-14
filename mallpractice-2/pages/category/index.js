@@ -19,7 +19,7 @@ Page({
       console.log(res);
       this.Cates = res.data.message;
       let leftMenuList = this.Cates.map(v=>v.cat_name);
-      let rightContent = this.Cates.map(v=>v.children)
+      let rightContent = this.Cates[0].children;
       this.setData({
         leftMenuList,
         rightContent

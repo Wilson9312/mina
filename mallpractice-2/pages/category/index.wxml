@@ -9,7 +9,20 @@
         </scroll-view>
         <!-- 右侧商品内容 -->
         <scroll-view class="right_menu" scroll-y>
-
+            <!-- 商品组 -->
+            <view class="goods_group" wx:for="{{rightContent}}" wx:key="*this" wx:for-item="gg_tiem" wx:for-index="gg_index">
+                <!-- 商品组标题 -->
+                <view class="goods_title">
+                    / {{gg_tiem.cat_name}} /
+                </view>
+                <!-- 商品组列表 -->
+                <view class="goods_list">
+                    <navigator url="" hover-class="navigator-hover" open-type="navigate"  wx:for="{{gg_tiem.children}}" wx:key="cat_id" wx:for-item="gl_tiem" wx:for-index="gl_index">
+                        <!-- <image src="{{gl_tiem.cat_icon}}" mode="widthFix" lazy-load="true"/> -->
+                        {{gl_tiem.cat_name}}
+                    </navigator>
+                </view>
+            </view>
         </scroll-view>
     </view>
 </view>
