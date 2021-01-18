@@ -18,24 +18,37 @@ page{
                 height: 80rpx;
                 font-size: 30rpx;
             }
+            .active{
+                color: var(--themeColor);
+                border-left: 5rpx solid currentColor;
+            }
         }
         .right_menu{
             flex: 5;
             .goods_group{
-                // display: flex;
                 .goods_title{
+                    height: 80rpx;
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    height: 80rpx;
+                    .delimiter{
+                        color:#ccc;
+                        // padding: 0 10rpx;
+                    }
                 }
                 .goods_list{
                     display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    flex-direction: row;
-                    height: 180rpx;
-                    width: 180rpx;
+                    flex-wrap: wrap;
+                    navigator{
+                        width: 33.33%;
+                        text-align: center;
+                        image{
+                            width: 50%;
+                        }
+                        .goods_name{
+                        
+                        }
+                    }
                 }
             }
         }

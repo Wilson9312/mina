@@ -3,27 +3,28 @@
     <view class="catesContainer">
         <!-- 左侧菜单 -->
         <scroll-view class="left_menu" scroll-y>
-            <view class="menu_item" wx:for="{{leftMenuList}}" wx:key="*this">
+            <view class="menu_item {{index === currentIndex ? 'active' : ''}}" wx:for="{{leftMenuList}}" wx:key="*this" bindtap="handleItemTap" data-index="{{index}}">
                 {{item}}
             </view>
         </scroll-view>
         <!-- 右侧商品内容 -->
-        <scroll-view class="right_menu" scroll-y>
+        <scroll-view class="right_menu" scroll-y scroll-top="{{scrollTop}}">
             <!-- 商品组 -->
             <view class="goods_group" wx:for="{{rightContent}}" wx:key="*this" wx:for-item="gg_tiem" wx:for-index="gg_index">
                 <!-- 商品组标题 -->
                 <view class="goods_title">
-                    / {{gg_tiem.cat_name}} /
+                    <text class="delimiter">/</text>
+                    <text class="title">{{gg_tiem.cat_name}}</text>
+                    <text class="delimiter">/</text>
                 </view>
                 <!-- 商品组列表 -->
                 <view class="goods_list">
-                    <navigator url="" hover-class="navigator-hover" open-type="navigate"  wx:for="{{gg_tiem.children}}" wx:key="cat_id" wx:for-item="gl_tiem" wx:for-index="gl_index">
-                        <!-- <image src="{{gl_tiem.cat_icon}}" mode="widthFix" lazy-load="true"/> -->
-                        {{gl_tiem.cat_name}}
+                    <navigator wx:for="{{gg_tiem.children}}" wx:key="cat_id" wx:for-item="gl_tiem" wx:for-index="gl_index" url="/pages/goods_list/index?cat_id={{gl_tiem.cat_id}}">
+                        <image src="{{gl_tiem.cat_icon}}" mode="widthFix" lazy-load="true" />
+                        <view class="goods_name">{{gl_tiem.cat_name}}</view>
                     </navigator>
                 </view>
             </view>
         </scroll-view>
     </view>
 </view>
-

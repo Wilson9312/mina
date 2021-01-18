@@ -1,0 +1,15 @@
+/* components/Tabs/Tabs.wxss */
+.tabs_title {
+  display: flex;
+  height: 60rpx;
+}
+.title_item {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+.acitve {
+  color: red;
+  border-bottom: 1rpx solid currentColor;
+}

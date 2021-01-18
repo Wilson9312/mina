@@ -18,20 +18,30 @@ page {
   height: 80rpx;
   font-size: 30rpx;
 }
+.cates .catesContainer .left_menu .active {
+  color: var(--themeColor);
+  border-left: 5rpx solid currentColor;
+}
 .cates .catesContainer .right_menu {
   flex: 5;
 }
 .cates .catesContainer .right_menu .goods_group .goods_title {
+  height: 80rpx;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 80rpx;
+}
+.cates .catesContainer .right_menu .goods_group .goods_title .delimiter {
+  color: #ccc;
 }
 .cates .catesContainer .right_menu .goods_group .goods_list {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  height: 180rpx;
-  width: 180rpx;
+  flex-wrap: wrap;
+}
+.cates .catesContainer .right_menu .goods_group .goods_list navigator {
+  width: 33.33%;
+  text-align: center;
+}
+.cates .catesContainer .right_menu .goods_group .goods_list navigator image {
+  width: 50%;
 }
