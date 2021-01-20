@@ -1,7 +1,7 @@
 <SearchInput></SearchInput>
 <!-- 监听自定义事件 -->
 <Tabs tabs="{{tabs}}" bindtabsItemChange="handleTabsItemChange">
-    <navigator class="goods_item" url="" wx:for="{{goods_list}}" wx:key="cat_id">
+    <navigator class="goods_item" url="/pages/goods_detail/index?goods_id={{item.goods_id}}" wx:for="{{goods_list}}" wx:key="cat_id">
         <view class="goods_img_wrap">
             <image src="{{item.goods_big_logo?item.goods_big_logo:'http://image3.suning.cn/uimg/b2c/newcatentries/0070079639-000000000178438845_2_800x800.jpg'}}" mode="widthFix" />
         </view>
