@@ -40,3 +40,44 @@
   font-size: 30rpx;
   font-weight: 600;
 }
+.bottom_tool {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 90rpx;
+  display: flex;
+  background-color: white;
+}
+.bottom_tool .tool_item {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 20rpx;
+  font-weight: 200;
+  position: relative;
+}
+.bottom_tool .tool_item button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+.bottom_tool .item_add {
+  flex: 2;
+  background-color: #f4af3d;
+  color: white;
+  font-size: 30rpx;
+  font-weight: 600;
+}
+.bottom_tool .item_buy {
+  flex: 2;
+  background-color: #e6695e;
+  color: white;
+  font-size: 30rpx;
+  font-weight: 600;
+}

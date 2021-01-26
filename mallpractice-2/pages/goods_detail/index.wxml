@@ -20,3 +20,23 @@
         <rich-text nodes="{{goodsObj.goods_introduce}}"></rich-text>
     </view>
 </view>
+
+<view class="bottom_tool">
+    <view class="tool_item item-kefu">
+        <view class="iconfont icon-kefu"></view>
+        <view>客服</view>
+        <!-- 设置一个透明的按钮，大小同父标签，实现点击 -->
+        <button open-type="contact"></button>
+    </view>
+    <view class="tool_item item-fenxiang">
+        <view class="iconfont icon-kefu"></view>
+        <view>分享</view>
+        <button open-type="share"></button>
+    </view>
+    <navigator class="tool_item item-gouwuche" url="/pages/cart/index" open-type="switchTab">
+        <view class="iconfont icon-kefu"></view>
+        <view>购物车</view>
+    </navigator>
+    <view class="tool_item item_add" bindtap="handleAddCart">加入购物车</view>
+    <view class="tool_item item_buy">立即购买</view>
+</view>
