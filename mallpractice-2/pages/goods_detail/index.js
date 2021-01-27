@@ -7,7 +7,7 @@ Page({
     goodsObj:{},
     currentSwiperItemIndex:0
   },
-  // data里放的是双向绑定的数据，即标签用到的数据，如果把没有用的数据放到data里，会损耗性能
+  //data里放的是双向绑定的数据，即标签用到的数据，如果把没有用的数据放到data里，会损耗性能
   GoodsInfo:{},
 
   //options(Object)
@@ -16,13 +16,14 @@ Page({
     this.getGoodsDetail(goods_id);
   },
 
+  //请求商品详情
   async getGoodsDetail (goods_id) {
     const goodsObj = await request({url:"/goods/detail",data:{goods_id}});
     this.GoodsInfo = goodsObj;
     console.log(this.GoodsInfo);
     this.setData({
       goodsObj:{
-        // 原数据有许多键值对，处于性能优化问题，这里复制必要数据
+        //原数据有许多键值对，处于性能优化问题，这里复制必要数据
         pics:goodsObj.pics,
         goods_name:goodsObj.goods_name,
         goods_price:goodsObj.goods_price,
@@ -35,8 +36,8 @@ Page({
     })
   },
 
+  //轮播图点击响应
   handleSwiperTap (e) {
-    console.log(e);
     const urls = this.GoodsInfo.pics.map(v=>v.pics_mid);
     const current = this.GoodsInfo.pics[this.data.currentSwiperItemIndex].pics_mid;
     wx.previewImage({
@@ -45,15 +46,28 @@ Page({
     });
   },
 
+  //轮播图轮播
   handleSwiperChange (e) {
-    console.log(e);
     this.data.currentSwiperItemIndex = e.detail.current;
   },
 
+  //添加购物车
   handleAddCart (e) {
-    
     let cartInfo = wx.getStorageSync('Cart') || [];
-    // cartInfo.map(v=>v.)
+    let index = cartInfo.findIndex(v=>v.goods_id===this.GoodsInfo.goods_id);
+    if (index===-1) {
+      this.GoodsInfo.num = 1;
+      cartInfo.push(this.GoodsInfo);
+    } else {
+      cartInfo[index].num++;
+    }
+    wx.setStorageSync('Cart', cartInfo);
+    wx.showToast({
+      title: '加入成功',
+      icon: 'success  ',
+      // 可防止用户频繁点击
+      mask: true
+    });
   }
 });
 
