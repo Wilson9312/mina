@@ -1,2 +1,35 @@
-<!--pages/cart/index.wxml-->
-<text>pages/cart/index.wxml</text>
+<view class="receive_address_row">
+    <view class="address_info" wx:if="{{address}}">
+        <view class="address_name">收货人：{{address.userName}}</view>
+        <view class="address_telNumber">{{address.telNumber}}</view>
+        <view class="address_full">{{address.full}}</view>
+    </view>
+    <view class="address_btn" wx:else>
+        <button type="primary" plain bindtap="handleChooseAddress">获取收货地址</button>
+    </view>
+</view>
+
+<view class="cart_content">
+    <view class="cart_title">购物车</view>
+    <view class="cart_item">
+        <view class="cart_chk_wrap">
+            <checkbox-group bindchange="handleCheckboxChange">
+                <checkbox class="" value="" color=""></checkbox>
+            </checkbox-group>
+        </view>
+        <navigator class="cart_img_wrap" url="" open-type="navigate">
+            <image src="" mode="widthFix" lazy-load="false" />
+        </navigator>
+        <view class="goods_info_wrap">
+            <view class="goods_name">索尼（SONY）KD-55X9000H 55英寸 4K超高清液晶电视 专业游戏模式 AI智能语音 HDMI2.1 支持4K120Hz输入</view>
+            <view class="goods_price_wrap">
+                <view class="goods_price">¥10999</view>
+                <view class="goods_count_wrap">
+                    <view class="goods_count">+</view>
+                    <view class="goods_num">1</view>
+                    <view class="goods_count">-</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

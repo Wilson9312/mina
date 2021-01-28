@@ -1,1 +1,143 @@
-/* pages/cart/index.wxss */
+.receive_address_row{
+    .address_btn{
+        padding: 20px;
+        button{
+            width: 60%;
+        }
+    }
+    .address_info{
+        padding: 20rpx;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        .address_name{
+            width: 50%;
+            text-align: left;
+        }
+        .address_full{
+            width: 100%;
+            text-align: left;
+            display: -webkit-box;
+            overflow: hidden;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+        }
+        .address_telNumber{
+            width: 50%;
+            text-align: right;
+        }
+    }
+}
+
+// .cart_content{
+//     .cart_title{
+//         padding: 20rpx;
+//         height: 80rpx;
+//         border-bottom: 1rpx solid var(--themeColor);
+//         border-top: 1rpx solid var(--themeColor);
+//     }
+//     .cart_item{
+//         height: 300rpx;
+//         padding: 20rpx;
+//         display: flex;
+//         justify-content: space-between;
+//         align-items: center;
+//         .cart_chk_wrap{
+//             flex: 2;
+//         }
+//         .cart_img_wrap{
+//             flex: 3;
+//             image{
+//                 width: 100%;
+
+//             }
+//         }
+//         .goods_info_wrap{
+//             padding: 20rpx;
+//             flex: 7;
+//             // display: flex;
+//             // justify-content: space-between;
+//             // align-content: space-between;
+//             .goods_name{
+//                 width: 100%;
+//                 top: 0rpx;
+//                 left: 0rpx;
+//                 text-align: left;
+//                 display: -webkit-box;
+//                 overflow: hidden;
+//                 -webkit-box-orient: vertical;
+//                 -webkit-line-clamp: 2;
+//             }
+//             .goods_price_wrap{
+//                 width: 100%;
+//                 top: 0rpx;
+//                 bottom: 0rpx;
+//                 display: flex;
+//                 justify-content: space-between;
+//                 align-items: center;
+//                 .goods_price{
+//                     flex: 1;
+//                     text-align: left;
+//                 }
+//                 .goods_count_wrap{
+//                     flex: 1;
+//                     text-align:right;
+//                     display: flex;
+//                     justify-content: space-between;
+//                     align-items: center;
+//                     .goods_count{
+//                         flex: 1;
+//                     }
+//                     .goods_num{
+//                         flex: 1;
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
+
+.cart_content {
+    .cart_title {
+  
+    }
+  
+    .cart_item {
+      .cart_chk_wrap {
+        checkbox-group {
+          checkbox {
+  
+          }
+        }
+      }
+  
+      .cart_img_wrap {
+        image {
+  
+        }
+      }
+  
+      .goods_info_wrap {
+        .goods_name {
+  
+        }
+  
+        .goods_price_wrap {
+          .goods_price {
+  
+          }
+  
+          .goods_count_wrap {
+            .goods_count {
+  
+            }
+  
+            .goods_num {
+  
+            }
+          }
+        }
+      }
+    }
+  }

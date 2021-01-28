@@ -1,0 +1,29 @@
+.receive_address_row .address_btn {
+  padding: 20px;
+}
+.receive_address_row .address_btn button {
+  width: 60%;
+}
+.receive_address_row .address_info {
+  padding: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.receive_address_row .address_info .address_name {
+  width: 50%;
+  text-align: left;
+}
+.receive_address_row .address_info .address_full {
+  width: 100%;
+  text-align: left;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.receive_address_row .address_info .address_telNumber {
+  width: 50%;
+  text-align: right;
+}
