@@ -27,3 +27,122 @@
   width: 50%;
   text-align: right;
 }
+.cart_content .cart_title {
+  font-size: 36rpx;
+  padding: 20rpx;
+  color: var(--themeColor);
+  border-top: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+}
+.cart_content .cart_list .cart_item {
+  display: flex;
+  padding: 10rpx;
+  border-bottom: 1px solid #ccc;
+  height: 300rpx;
+}
+.cart_content .cart_list .cart_item .cart_chk_wrap {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cart_content .cart_list .cart_item .cart_img_wrap {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cart_content .cart_list .cart_item .cart_img_wrap image {
+  width: 80%;
+}
+.cart_content .cart_list .cart_item .goods_info_wrap {
+  flex: 4;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+.cart_content .cart_list .cart_item .goods_info_wrap .goods_name {
+  width: 100%;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  color: #666;
+  font-size: 25rpx;
+}
+.cart_content .cart_list .cart_item .goods_info_wrap .goods_price_wrap {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.cart_content .cart_list .cart_item .goods_info_wrap .goods_price_wrap .goods_price {
+  color: var(--themeColor);
+  font-size: 30rpx;
+}
+.cart_content .cart_list .cart_item .goods_info_wrap .goods_price_wrap .goods_count_wrap {
+  display: flex;
+}
+.cart_content .cart_list .cart_item .goods_info_wrap .goods_price_wrap .goods_count_wrap .goods_count {
+  border: 0.5px solid #ccc;
+  font-size: 25rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40rpx;
+  height: 40rpx;
+}
+.cart_content .cart_list .cart_item .goods_info_wrap .goods_price_wrap .goods_count_wrap .goods_num {
+  font-size: 25rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40rpx;
+  height: 40rpx;
+}
+.footer_tool {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 90rpx;
+  width: 100%;
+  background-color: white;
+  border-top: 1rpx solid #ccc;
+  display: flex;
+}
+.footer_tool .all_chk_wrap {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer_tool .all_chk_wrap checkbox-group checkbox {
+  color: #666;
+  font-size: 25rpx;
+}
+.footer_tool .total_price_wrap {
+  flex: 3;
+  padding-right: 10rpx;
+  text-align: right;
+}
+.footer_tool .total_price_wrap .total_price {
+  font-size: 28rpx;
+}
+.footer_tool .total_price_wrap .total_price .total_price_text {
+  font-size: 32rpx;
+  font-weight: 400;
+  color: var(--themeColor);
+}
+.footer_tool .total_price_wrap .total_price_tips {
+  font-size: 20rpx;
+}
+.footer_tool .order_pay_warp {
+  flex: 1.2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--themeColor);
+  color: white;
+  font-size: 32rpx;
+  font-weight: 600;
+}

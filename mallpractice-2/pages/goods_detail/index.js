@@ -56,7 +56,10 @@ Page({
     let cartInfo = wx.getStorageSync('Cart') || [];
     let index = cartInfo.findIndex(v=>v.goods_id===this.GoodsInfo.goods_id);
     if (index===-1) {
+      // 若商品不存在购物车内，则添加商品
+      // 同时添加购物车内需要的参数：数量、是否选中
       this.GoodsInfo.num = 1;
+      this.GoodsInfo.checked = true;
       cartInfo.push(this.GoodsInfo);
     } else {
       cartInfo[index].num++;

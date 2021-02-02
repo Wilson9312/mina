@@ -1,7 +1,11 @@
 //Page Object
 Page({
   data: {
-    address:{}
+    address:{},
+    cart:[],
+    allChecked:false,
+    totalPrice:0,
+    totalNum:0
   },
   //options(Object)
   onLoad: function(options){
@@ -9,10 +13,22 @@ Page({
   },
   onShow: function(){
     // 因为购物车会频繁被打开关闭，所以实时去处理数据比较好
+
+    // 获取缓存中收货地址
     const address = wx.getStorageSync("address");
-    address.full = address.provinceName+address.cityName+address.countyName+address.detailInfo;
+    // 获取缓存中购物车数据
+    const cart = wx.getStorageSync('Cart')||[];
+    // 计算是否全选
+    // every 方法：
+    // 遍历数组，只有当条件都返回true时，方法返回true；
+    // 任意条件为false时，立马结束遍历，返回false；
+    // 当传入空数组时，默认返回true
+    const allChecked = cart.length?cart.every(v=>v.checked):false;
+
     this.setData({
-      address
+      address,
+      cart,
+      allChecked
     });
   },
   // 点击选择地址
@@ -45,10 +61,14 @@ Page({
     // 新版：
     wx.chooseAddress({
       success: (result)=>{
-        console.log(result);
+        result.full = result.provinceName+result.cityName+result.countyName+result.detailInfo;
         wx.setStorageSync("address", result);
       }
     });
+  },
+
+  handleCheckboxChange(e){
+    console.log(e);
   }
 });
 
