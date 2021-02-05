@@ -53,7 +53,7 @@ Page({
 
   //添加购物车
   handleAddCart (e) {
-    let cartInfo = wx.getStorageSync('Cart') || [];
+    let cartInfo = wx.getStorageSync('cart') || [];
     let index = cartInfo.findIndex(v=>v.goods_id===this.GoodsInfo.goods_id);
     if (index===-1) {
       // 若商品不存在购物车内，则添加商品
@@ -64,7 +64,7 @@ Page({
     } else {
       cartInfo[index].num++;
     }
-    wx.setStorageSync('Cart', cartInfo);
+    wx.setStorageSync('cart', cartInfo);
     wx.showToast({
       title: '加入成功',
       icon: 'success  ',
