@@ -1,3 +1,5 @@
+import { showModal } from "../../utils/asyncWX.js"
+
 //Page Object
 Page({
   data: {
@@ -16,31 +18,10 @@ Page({
 
     // 获取缓存中收货地址
     const address = wx.getStorageSync("address");
+    this.setData({address});
     // 获取缓存中购物车数据
     const cart = wx.getStorageSync('cart') || [];
-    // 计算是否全选
-    // every 方法：
-    // 遍历数组，只有当条件都返回true时，方法返回true；
-    // 任意条件为false时，立马结束遍历，返回false；
-    // 当传入空数组时，默认返回true
-    const allChecked = cart.length ? cart.every(v => v.checked) : false;
-    // 计算 总价格 总数量
-    let totalPrice = 0;
-    let totalNum = 0;
-    cart.forEach(v => {
-      if (v.checked) {
-        totalPrice+=v.num*v.goods_price;
-        totalNum+=v.num;
-      }
-    });
-    // cart.f
-    this.setData({
-      address,
-      cart,
-      allChecked,
-      totalPrice,
-      totalNum
-    });
+    this.setCart(cart);
   },
   // 点击选择地址
   handleChooseAddress() {
@@ -88,11 +69,62 @@ Page({
     const index = cart.findIndex(v=>v.goods_id===goods_id);
     // 修改选中状态
     cart[index].checked = !cart[index].checked;
-    // 更新data和缓存中的购物车数据
+    this.setCart(cart);
+  },
+
+  setCart(cart) {
+    // 计算是否全选
+    // every 方法：
+    // 遍历数组，只有当条件都返回true时，方法返回true；
+    // 任意条件为false时，立马结束遍历，返回false；
+    // 当传入空数组时，默认返回true
+    const allChecked = cart.length ? cart.every(v => v.checked) : false;
+    // 计算 总价格 总数量
+    let totalPrice = 0;
+    let totalNum = 0;
+    cart.forEach(v => {
+      if (v.checked) {
+        totalPrice+=v.num*v.goods_price;
+        totalNum+=v.num;
+      }
+    });
     this.setData({
-      cart
+      cart,
+      allChecked,
+      totalPrice,
+      totalNum
     });
     wx.setStorageSync('cart', cart);
+  },
+
+  handleAllCheckedChange(e) {
+    let {cart,allChecked} = this.data;
+    allChecked=!allChecked;
+    cart.forEach(v => {
+      v.checked=allChecked;
+    });
+    this.setCart(cart);
+  },
+
+  async handleNumCount(e) {
+    // 1.获取传递过来的参数
+    let {id,operation} = e.currentTarget.dataset;
+    console.log(id,operation);
+    // 2.获取购物车数组
+    let {cart} = this.data;
+    // 3.找到需要修改的商品索引
+    const index = cart.findIndex(v=>v.goods_id===id);
+    if (cart[index].num===1&&operation===-1) {
+      const result = await showModal({content:"您是否要删除该商品？"});
+      if (result.confirm) {
+        console.log("用户点击确定");
+        cart.splice(index,1);
+        this.setCart(cart);
+      }
+    }else{
+      cart[index].num+=operation;
+      this.setCart(cart);
+    }
   }
 });
 
