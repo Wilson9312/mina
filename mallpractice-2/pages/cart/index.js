@@ -1,4 +1,4 @@
-import { showModal } from "../../utils/asyncWX.js"
+import { showModal,showToast } from "../../utils/asyncWX.js"
 
 //Page Object
 Page({
@@ -125,6 +125,29 @@ Page({
       cart[index].num+=operation;
       this.setCart(cart);
     }
+  },
+  // 点击结算
+  async handlePay(e) {
+    const {address,totalNum} = this.data;
+    // 1 判断收货地址
+    if (!address.userName) {
+      await showToast({title:"您还没有选择收货地址"});
+      return;
+    }
+    // 2 判断用户有没有商品
+    if (totalNum===0) {
+      await showToast({title:"您还没有选购商品"});
+      return;
+    }
+    // 3 跳转到支付页面
+    wx.navigateTo({
+      url: '/pages/pay/index',
+      success: (result)=>{
+        console.log("成功");
+      },
+      fail: ()=>{},
+      complete: ()=>{}
+    });
   }
 });
 

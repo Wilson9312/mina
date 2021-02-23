@@ -19,3 +19,19 @@ export const showModal=({content})=>{
           });
     })
 }
+
+export const showToast=({title})=>{
+    return new Promise((resolve,reject)=>{
+        wx.showToast({
+            title: title,
+            icon: 'none',
+            success: (result)=>{
+                resolve(result);
+            },
+            fail: (error)=>{
+                reject(error);
+            },
+            complete: ()=>{}
+        });
+    })
+}

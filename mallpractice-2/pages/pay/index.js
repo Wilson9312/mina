@@ -1,66 +1,59 @@
-// pages/pay/index.js
+import { showModal,showToast } from "../../utils/asyncWX.js"
+
+//Page Object
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    address: {},
+    cart: [],
+    allChecked: false,
+    totalPrice: 0,
+    totalNum: 0
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
+  //options(Object)
   onLoad: function (options) {
 
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
   onShow: function () {
+    // 因为购物车会频繁被打开关闭，所以实时去处理数据比较好
+
+    // 获取缓存中收货地址
+    const address = wx.getStorageSync("address");
+    this.setData({address});
+    // 获取缓存中购物车数据
+    let cart = wx.getStorageSync('cart') || [];
+    cart = cart.filter(v=>v.checked);
+
+    // 计算 总价格 总数量
+    let totalPrice = 0;
+    let totalNum = 0;
+    cart.forEach(v => {
+      if (v.checked) {
+        totalPrice+=v.num*v.goods_price;
+        totalNum+=v.num;
+      }
+    });
+    this.setData({
+      cart,
+      totalPrice,
+      totalNum,
+      address
+    });
 
   },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
 
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  // 点击支付
+  async handlePay(e) {
+    const {address,totalNum} = this.data;
+    // 支付
+    wx.navigateTo({
+      url: '/pages/pay/index',
+      success: (result)=>{
+        console.log("成功");
+      },
+      fail: ()=>{},
+      complete: ()=>{}
+    });
   }
-})
+});
+
