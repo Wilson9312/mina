@@ -1,6 +1,11 @@
 // 记录同时发送异步请求的次数
 let ajaxTimes = 0;
 export const request = (params) => {
+
+    // 请求头处理封装
+    let header = {...params.header};
+
+
     ajaxTimes++;
     wx.showLoading({title: '加载中',mask: true});
     const baseUrl = "https://api-hmugo-web.itheima.net/api/public/v1";

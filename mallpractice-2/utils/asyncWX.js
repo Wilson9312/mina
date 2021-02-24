@@ -35,3 +35,36 @@ export const showToast=({title})=>{
         });
     })
 }
+
+export const wxlogin=()=>{
+    return new Promise((resolve,reject)=>{
+        wx.login({
+            timeout:10000,
+            success: (result)=>{
+                resolve(result);
+            },
+            fail: (error)=>{
+                reject(error);
+            }
+        });
+    })
+}
+
+/**
+ * Promise 形式的 小程序微信支付
+ * @param {object} pay 微信支付所必要的参数
+ */
+export const wxRequestPayment=(pay)=>{
+    return new Promise((resolve,reject)=>{
+        wx.requestPayment({
+            ...pay,
+            success: (result)=>{
+                resolve(result);
+            },
+            fail: (error)=>{
+                reject(error);
+            },
+            complete: ()=>{}
+        });
+    })
+}
