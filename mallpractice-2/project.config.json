@@ -93,6 +93,12 @@
         {
           "name": "授权",
           "pathName": "pages/auth/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "我的",
+          "pathName": "pages/user/index",
           "scene": null
         }
       ]

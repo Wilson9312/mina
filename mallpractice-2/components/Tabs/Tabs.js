@@ -26,7 +26,6 @@ Component({
       console.log(index);
       // 触发父组件中的事件 自定义
       this.triggerEvent("tabsItemChange",{index});
-
     }
   }
 })

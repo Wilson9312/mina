@@ -1,2 +1,12 @@
-<!--pages/user/index.wxml-->
-<text>pages/user/index.wxml</text>
+<!-- <navigator class="" target="self" url="/pages/login/index" hover-class="navigator-hover" open-type="navigate">
+    登录
+</navigator> -->
+<view class="user_info_wrap">
+    <view class="user_img_wrap">
+        <image class="user_bg" src="{{userInfo}}"></image>
+        <view class="user_info">
+            <image class="user_icon"></image>
+            <view class="user_name"></view>
+        </view>
+    </view>
+</view>
