@@ -15,26 +15,27 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* 退货/退款 */
 .icon-tuikuan:before {
   content: "\e600";
 }
-
+/* 待付款 */
 .icon-fukuantongzhi:before {
   content: "\e60c";
 }
-
+/* 收藏 */
 .icon-shoucang:before {
   content: "\e613";
 }
-
+/* 分享 */
 .icon-fenxiang:before {
   content: "\e849";
 }
-
+/* 全部订单 */
 .icon-ding_huabanfuben:before {
   content: "\e61e";
 }
-
+/* 收货地址 */
 .icon-shouhuodizhi:before {
   content: "\e666";
 }

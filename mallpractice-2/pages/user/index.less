@@ -1,0 +1,156 @@
+/* pages/user/index.wxss */
+page {
+    background-color: #ededed;
+}
+
+.user_info_wrap {
+    background-color: var(--themeColor);
+    height          : 45vh;
+    overflow        : hidden;
+    position        : relative;
+
+    .user_img_wrap {
+        position: relative;
+
+        .user_bg {
+            // Chrome, Safari, Opera
+            -webkit-filter: blur(5px);
+            filter        : blur(5px);
+            width         : 104%;
+            height        : 50vh;
+            margin-left   : -2%;
+        }
+
+        .user_info {
+            position  : absolute;
+            left      : 50%;
+            // 水平居中
+            transform : translateX(-50%);
+            top       : 20%;
+            text-align: center;
+
+            .user_icon {
+                width        : 165rpx;
+                height       : 165rpx;
+                border-radius: 50%;
+            }
+
+            .user_name {
+                color        : white;
+                margin-top   : 40rpx;
+                // font-size : 40rpx;
+            }
+        }
+    }
+
+    .user_btn {
+        position     : absolute;
+        // xy居中
+        left         : 50%;
+        top          : 50%;
+        transform    : translate(-50%, -50%);
+        border       : 0.5px solid green;
+        color        : green;
+        border-radius: 10rpx;
+        padding      : 20rpx 40rpx;
+    }
+}
+
+.user_content {
+    position: relative;
+
+    .user_main {
+        position: absolute;
+        top     : -40rpx;
+        padding : 0rpx 20rpx;
+        width   : 100%;
+        padding-bottom: 50rpx;
+
+        // 足迹
+        .history_wrap {
+            display         : flex;
+            background-color: white;
+
+            navigator {
+                flex      : 1;
+                text-align: center;
+                padding   : 10rpx 0rpx;
+
+                .his_num {
+                    color    : var(--themeColor);
+                    font-size: 35rpx;
+                }
+
+                .his_name {
+                    color    : grey;
+                    font-size: 25rpx;
+                }
+            }
+        }
+
+        // 订单
+        .order_wrap {
+            margin-top      : 20rpx;
+            width           : 100%;
+            background-color: white;
+
+            .order_title {
+                padding  : 25rpx 20rpx;
+                color    : gray;
+                font-size: 25rpx;
+            }
+
+            .order_content {
+                border-top: solid 0.5rpx #cccccc;
+                display   : flex;
+
+                navigator {
+                    flex      : 1;
+                    text-align: center;
+                    padding   : 10rpx 0rpx;
+
+                    .iconfont {
+                        color    : var(--themeColor);
+                        font-size: 45rpx;
+                    }
+
+                    .order_name {
+                        color    : gray;
+                        font-size: 25rpx;
+                    }
+                }
+            }
+        }
+
+        // 收货地址
+        .address_wrap {
+            margin-top      : 20rpx;
+            background-color: white;
+            padding         : 20rpx;
+        }
+
+        // 应用信息
+        .app_info_warp {
+            margin-top      : 20rpx;
+            background-color: white;
+
+            .app_info_item {
+                padding      : 20rpx;
+                border-bottom: solid #ccc 0.5rpx;
+            }
+
+            // 对联系客服做单独处理
+            .app_info_contact {
+                display        : flex;
+                justify-content: space-between;
+            }
+        }
+
+        // 推荐
+        .recomend_wrap {
+            margin-top      : 20rpx;
+            background-color: white;
+            padding         : 20rpx;
+        }
+    }
+}
