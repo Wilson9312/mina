@@ -1,2 +1,28 @@
-<!--pages/order/index.wxml-->
-<text>pages/order/index.wxml</text>
+<!-- pages/order/index.wxml -->
+<Tabs tabs="{{tabs}}" bindtabsItemChange="handleTabsItemChange">
+    <!-- <navigator class="goods_item" url="/pages/goods_detail/index?goods_id={{item.goods_id}}" wx:for="{{goods_list}}" wx:key="cat_id">
+        <view class="goods_img_wrap">
+            <image src="{{item.goods_big_logo?item.goods_big_logo:'http://image3.suning.cn/uimg/b2c/newcatentries/0070079639-000000000178438845_2_800x800.jpg'}}" mode="widthFix" />
+        </view>
+        <view class="goods_info_wrap">
+            <view class="goods_name">{{item.goods_name}}</view>
+            <view class="goods_price">¥{{item.goods_price}}</view>
+        </view>
+    </navigator> -->
+    <view class="order_main">
+        <view class="order_item" wx:for="{{orders}}" wx:key="order_id">
+            <view class="order_no_row order_row">
+                <view class="order_no_text">订单编号</view>
+                <view class="order_no_value">{{item.order_number}}</view>
+            </view>
+            <view class="order_price_row  order_row">
+                <view class="order_price_text">订单价格</view>
+                <view class="order_price_value">¥{{item.order_price}}</view>
+            </view>
+            <view class="order_time_row  order_row">
+                <view class="order_time_text">订单日期</view>
+                <view class="order_time_value">{{item.create_time_cn}}</view>
+            </view>
+        </view>
+    </view>
+</Tabs>
